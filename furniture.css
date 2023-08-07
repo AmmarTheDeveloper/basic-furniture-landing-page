@@ -1,0 +1,198 @@
+*{
+    margin:0;
+    font-family:'Poppins' , sans-serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300;1,400;1,500&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+a{
+    text-decoration:none;
+}
+.btn{
+    margin-top:10px;
+    font-weight:600;
+    padding:10px 20px;
+    border-radius:5px;
+    border:2px solid rgb(8, 241, 8);
+    background:rgb(8,241,8);
+    color:white;
+    transition:all 0.3s ease;
+}
+.btn:hover{
+    background: transparent;
+    color:black;
+}
+/* navbar design starts here */
+.navbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    height:60px;
+    box-sizing:border-box;
+    padding:0 40px;
+    background:#f9f9f9;
+    box-shadow:0 5px 10px rgba(0,0,0,0.5);
+    z-index:1000;
+}
+.navbar .nav{
+    display:flex;
+    list-style:none;
+    flex-direction:row;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+}
+.navbar .nav .nav-link{
+    margin-inline:20px;
+    font-size:18px;
+    color:black;
+    text-transform:uppercase;
+    font-weight:500;
+    transition:all 0.3s ease;
+}
+.navbar .nav .nav-link:hover{
+    color:blue;
+}
+.navbar .menu .bar{
+    position:fixed;
+    top:15px;
+    font-size:25px;
+    color:black;
+    display:none;
+}
+.navbar .nav .cancel{
+    position:absolute;
+    left:20px;
+    top:10px;
+    font-size:25px;
+    display:none;
+}
+@media screen and (max-width:991px){
+    .navbar .nav .cancel.hide{
+        display:none;
+    }
+    body.scrolldisabled{
+        overflow:hidden;
+    }
+    .navbar .menu .bar{
+        cursor:pointer;
+        display:block;
+    }
+    .navbar .nav .cancel{
+        cursor:pointer;
+        display:inline-flex;
+    }
+    .navbar .menu .bar.hide{
+        display:none;
+    }
+    .navbar .nav{
+        position:fixed;
+        top:0;
+        right:-100%;
+        height:100vh;
+        width:60%;
+        background:#f9f9f9;
+        flex-direction:column;
+        justify-content:center;
+        align-items:center;
+        transition:all 0.3s ease;
+    }
+    .navbar .nav .nav-item{
+        margin:20px 0;
+    }
+    .navbar .nav.active{
+        right:0;
+    }
+}
+/* home styling starts here  */
+.home{
+    background-attachment:fixed;
+    z-index:1;
+    background-image:url('images/furniture-1.jpg');
+    background-size:cover;
+    height:90vh;
+    width: 100%;
+    display:flex;
+}
+.home .content{
+    width:500px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin-left:100px;
+}
+.home .content .heading{
+    margin-bottom:5px;
+}
+.home .content .imp-text{
+    color:rgb(10, 247, 10);
+}
+.home .content .text{
+    font-size:18px;
+}
+@media screen and (max-width:700px){
+    .home .content{
+        margin-left:50px;
+    }
+}
+@media screen and (max-width:600px){
+    .home .content{
+        margin:0 30px;
+    }
+}
+/* shop styling starts here */
+.shop{
+    padding:50px 50px;
+}
+.shop .shop-heading{
+    text-align:center;
+    margin:20px 0 50px 0;
+}
+.shop .card-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:20px;
+}
+.shop .card-container .card{
+    border:2px solid black;
+    border-radius:5px;
+    padding:10px 10px;
+    width:320px;
+}
+.shop .card-container .card .card-img img{
+    width:100%;
+    height:300px;
+}
+.shop .card-container .card .heading{
+    text-align:center;
+    font-size:25px;
+    font-weight:600;
+    margin:5px 0;
+}
+.shop .card-container .card .card-btn{
+    display:block;
+    width:50px;
+    text-align:center;
+}
+@media screen and (max-width:450px){
+    .shop{
+        padding:50px  30px;
+    }
+}
+@media screen and (max-width:400px){
+    .shop{
+        padding:50px 20px;
+    }
+    .shop .card-container .card{
+        width:100%;
+    }
+}
